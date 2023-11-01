@@ -1,3 +1,10 @@
+- description: ABRicate
+  id: abricate
+  url: https://github.com/tseemann/abricate
+  name: ABRicate
+  topics: 
+    - Genomics
+    - Microbiology
 - description: Bioconda is a bioinformatics channel for the Conda package manager
   id: bioconda
   url: https://bioconda.github.io/

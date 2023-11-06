@@ -281,6 +281,7 @@ where_exp:"item","item.national_resources != nil" %}
                 <td>{{tool.topics}}</td>
                 {%- else %}
                 <td></td>
+                {%- endif %}
                 <td>publications</td>
                 {% if tool.biocontainers %}
                 <td>
@@ -302,18 +303,22 @@ where_exp:"item","item.national_resources != nil" %}
                 <td>{{tool.nci-gadi}}</td>
                 {%- else %}
                 <td></td>
+                {%- endif %}
                 {% if tool.nci-if89 %}
                 <td>{{tool.nci-if89}}</td>
                 {%- else %}
                 <td></td>
+                {%- endif %}
                 {% if tool.pawsey %}
                 <td>{{tool.pawsey}}</td>
                 {%- else %}
                 <td></td>
+                {%- endif %}
                 {% if tool.bunya %}
                 <td>{{tool.bunya}}</td>
                 {%- else %}
                 <td></td>
+                {%- endif %}
             </tr>
             {%- endfor %}
         </tbody>

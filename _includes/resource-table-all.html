@@ -291,7 +291,7 @@ where_exp:"item","item.national_resources != nil" %}
                 {%- assign match = attribute_name | match: pattern %}
                 {%- if match.size > 0 %}
                 {%- assign tools_label = match[0] %}
-                <td><button class="tool-button">{{ tools_label }}</button></td>
+                <td><button class="tool-button" data-tools="{{ tools_label }}">{{ tools_label }}</button></td>
                 {%- else %}
                 <td>galaxy</td>
                 {%- endif %}
@@ -317,7 +317,8 @@ where_exp:"item","item.national_resources != nil" %}
     // JavaScript code to handle the onclick event
     document.querySelectorAll('.tool-button').forEach(function (button) {
         button.addEventListener('click', function () {
-            alert('You clicked the button for ' + this.textContent.trim() + '.');
+            var numberOfTools = this.getAttribute('data-tools');
+            alert('You clicked the button for ' + numberOfTools + '.');
         });
     });
 </script>

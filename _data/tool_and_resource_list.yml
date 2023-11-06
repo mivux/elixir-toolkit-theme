@@ -15,7 +15,7 @@
   name: ABySS
   topics: 
     - Sequence assembly
-  galaxy-australia: 3 toolsABRicate ListABRicateABRicate Summary
+  galaxy-australia: ABySS
   registry-link: https://bio.tools/abyss
   biocontainers: https://biocontainers.pro/tools/abyss
   nci-gadi: 2.2.3

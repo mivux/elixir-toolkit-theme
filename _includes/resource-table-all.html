@@ -286,10 +286,12 @@ where_exp:"item","item.national_resources != nil" %}
                 {%- else %}
                 <td></td>
                 {%- endif %}
-                {%- assign pattern = "^[0-9]+ tools" %}
-                {%- if tool.galaxy-australia | match: pattern %}
-                    {%- assign number_of_tools = attribute_name | split: " " | first %}
-                    <td>{{number_of_tools}}</td>
+                {%- assign attribute_name = tool.galaxy %}
+                {%- assign pattern = "([0-9]+ tools)" %}
+                {%- if attribute_name | match: pattern %}
+                    {%- assign tools_description = attribute_name | split: pattern | last %}
+                    {%- assign number_of_tools = attribute_name | replace: tools_description, "" %}
+                    <button class="tool-button" data-tools="{{ number_of_tools }}">{{ number_of_tools }}</button>
                 {%- else %}
                 <td>galaxy</td>
                 {%- endif %}

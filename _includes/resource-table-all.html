@@ -293,7 +293,7 @@ where_exp:"item","item.national_resources != nil" %}
                     {%- assign number_of_tools = match[0] | remove: " tools" %}
                     {%- assign tools_description = attribute_name | remove: match[0] %}
                     <!-- Found {{ number_of_tools }} tools: {{ tools_description | strip }} -->
-                    <button class="tool-button" data-tools="{{ number_of_tools }}">Click me</button>
+                    <td><button class="tool-button" data-tools="{{ number_of_tools }}">{{ number_of_tools }}</button></td>
                 {%- else %}
                 <td>galaxy</td>
                 {%- endif %}

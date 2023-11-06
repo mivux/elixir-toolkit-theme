@@ -1,10 +1,24 @@
-- description: ABRicate
+- description: Mass screening of contigs for antimicrobial resistance or virulence genes.
   id: abricate
   url: https://github.com/tseemann/abricate
   name: ABRicate
   topics: 
     - Genomics
     - Microbiology
+  galaxy-australia: 3 toolsABRicate ListABRicateABRicate Summary
+  registry-link: https://bio.tools/ABRicate
+  biocontainers: https://biocontainers.pro/tools/ABRicate
+  bunya: 1.0.0-gompi-2021a
+- description: De novo genome sequence assembler.
+  id: abyss
+  url: https://github.com/bcgsc/abyss/
+  name: ABySS
+  topics: 
+    - Sequence assembly
+  galaxy-australia: 3 toolsABRicate ListABRicateABRicate Summary
+  registry-link: https://bio.tools/abyss
+  biocontainers: https://biocontainers.pro/tools/abyss
+  nci-gadi: 2.2.3
 - description: Bioconda is a bioinformatics channel for the Conda package manager
   id: bioconda
   url: https://bioconda.github.io/

@@ -278,7 +278,10 @@ where_exp:"item","item.national_resources != nil" %}
                 <td></td>
                 {%- endif %}
                 {% if tool.topics %}
-                <td>{{tool.topics}}</td>
+                <td>
+                    {%- for section in tool.topics %}
+                    <span class="badge default-badge">{{section}}</span>
+                </td>
                 {%- else %}
                 <td></td>
                 {%- endif %}
@@ -291,7 +294,7 @@ where_exp:"item","item.national_resources != nil" %}
                 <td></td>
                 {%- endif %}
                 {%- assign attribute_name = tool.galaxy-australia | strip %}
-                {%- assign pattern = "^[0-9]+ tools" %}
+                {%- assign pattern = "([0-9]+ tools)" %}
                 {%- assign match = attribute_name | match: pattern %}
                 {%- if match.size > 0 %}
                 {%- assign tools_label = match %}

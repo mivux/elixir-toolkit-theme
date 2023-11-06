@@ -277,7 +277,10 @@ where_exp:"item","item.national_resources != nil" %}
                 {%- else %}
                 <td></td>
                 {%- endif %}
-                <td>topics</td>
+                {% if tool.topics %}
+                <td>{{tool.topics}}</td>
+                {%- else %}
+                <td></td>
                 <td>publications</td>
                 {% if tool.biocontainers %}
                 <td>
@@ -295,10 +298,22 @@ where_exp:"item","item.national_resources != nil" %}
                 {%- assign tools_label = attribute_name }
                 {%- endif %}
                 <td><button class="tool-button">{{ tools_label }}</button></td>
-                <td>nci gadi</td>
-                <td>nci if89</td>
-                <td>pawsey</td>
-                <td>bunya</td>
+                {% if tool.nci-gadi %}
+                <td>{{tool.nci-gadi}}</td>
+                {%- else %}
+                <td></td>
+                {% if tool.nci-if89 %}
+                <td>{{tool.nci-if89}}</td>
+                {%- else %}
+                <td></td>
+                {% if tool.pawsey %}
+                <td>{{tool.pawsey}}</td>
+                {%- else %}
+                <td></td>
+                {% if tool.bunya %}
+                <td>{{tool.bunya}}</td>
+                {%- else %}
+                <td></td>
             </tr>
             {%- endfor %}
         </tbody>

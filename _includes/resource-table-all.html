@@ -314,3 +314,13 @@ where_exp:"item","item.national_resources != nil" %}
 {%- endunless %}
 <div id="skip-tool-table"></div>
 {%- endunless %}
+
+<script>
+    // JavaScript code to handle the onclick event
+    document.querySelectorAll('.tool-button').forEach(function(button) {
+      button.addEventListener('click', function() {
+        var numberOfTools = this.getAttribute('data-tools');
+        alert('You clicked the button for ' + numberOfTools + ' tools.');
+      });
+    });
+  </script>

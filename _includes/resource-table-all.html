@@ -286,7 +286,7 @@ where_exp:"item","item.national_resources != nil" %}
                 {%- else %}
                 <td></td>
                 {%- endif %}
-                {%- assign attribute_name = tool.galaxy %}
+                {%- assign attribute_name = tool.galaxy-australia %}
                 {%- assign pattern = "([0-9]+ tools)" %}
                 {%- if attribute_name | match: pattern %}
                     {%- assign tools_description = attribute_name | split: pattern | last %}

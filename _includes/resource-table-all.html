@@ -295,9 +295,9 @@ where_exp:"item","item.national_resources != nil" %}
                 {%- assign match = attribute_name | match: pattern %}
                 {%- if match.size > 0 %}
                 {%- assign tools_label = match[0] %}
-                {%- else %}
-                {%- assign tools_label = attribute_name }
                 <td><button class="tool-button">{{ tools_label }}</button></td>
+                {%- else %}
+                <td></td>
                 {%- endif %}
                 {% if tool.nci-gadi %}
                 <td>{{tool.nci-gadi}}</td>

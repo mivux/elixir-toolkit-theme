@@ -274,6 +274,8 @@ where_exp:"item","item.national_resources != nil" %}
                         <img src="https://bio.tools/img/elixir_biotools_transparent.png">
                     </a>
                 </td>
+                {%- else %}
+                <td></td>
                 {%- endif %}
                 <td>topics</td>
                 <td>publications</td>
@@ -281,6 +283,8 @@ where_exp:"item","item.national_resources != nil" %}
                 <td>
                     <a href="{{tool.biocontainers}}">{{tool.name}}</a>
                 </td>
+                {%- else %}
+                <td></td>
                 {%- endif %}
                 <td>galaxy</td>
                 <td>nci gadi</td>

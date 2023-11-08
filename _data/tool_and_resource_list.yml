@@ -1,24 +1,98 @@
-- description: Mass screening of contigs for antimicrobial resistance or virulence genes.
-  id: abricate
+- name: ABRicate
+  description: Mass screening of contigs for antimicrobial resistance or virulence genes.
   url: https://github.com/tseemann/abricate
-  name: ABRicate
+  homepage: ABRicate
+  registry-link: https://bio.tools/ABRicate
+  id: abricate
   topics: 
     - Genomics
     - Microbiology
-  galaxy-australia: 3 toolsABRicate ListABRicateABRicate Summary
-  registry-link: https://bio.tools/ABRicate
-  biocontainers: https://biocontainers.pro/tools/ABRicate
+  publications: ''
+  biocontainers: ABRicate
+  license: GPL-2.0
+  resources-documentation: ''
+  galaxy: 
+    - ABRicate List
+    - ABRicate
+    - ABRicate Summary
+  nci-gadi: ''
+  nci-if89: ''
+  pawsey: ''
   bunya: 1.0.0-gompi-2021a
-- description: De novo genome sequence assembler.
-  id: abyss
+- name: ABySS
+  description: De novo genome sequence assembler.
   url: https://github.com/bcgsc/abyss/
-  name: ABySS
-  topics: 
-    - Sequence assembly
-  galaxy-australia: ABySS
+  homepage: ABySS
   registry-link: https://bio.tools/abyss
-  biocontainers: https://biocontainers.pro/tools/abyss
-  nci-gadi: 2.2.3
+  id: abyss
+  topics: Sequence assembly
+  publications:
+    publication1:
+      title: 'ABySS: A parallel assembler for short read sequence data'
+      url: https://doi.org/10.1101/gr.089532.108
+    publication2:
+      title: 'ABySS 2.0: Resource-efficient assembly of large genomes using a Bloom filter'
+      url: https://genome.cshlp.org/content/27/5/768
+  biocontainers: abyss
+  license: ''
+  resources-documentation: ''
+  galaxy:
+    - ABySS
+  nci-gadi: 
+    - 2.2.3
+  nci-if89: ''
+  pawsey: ''
+  bunya: ''
+- name: aggregate scores in intervals2
+  description: No description available.
+  homepage: ''
+  registry-link: ''
+  id: aggregate_scores_in_intervals2
+  topics: ''
+  publications: ''
+  biocontainers: ''
+  license: ''
+  resources-documentation: ''
+  galaxy:
+    - Aggregate datapoints
+  nci-gadi: ''
+  nci-if89: ''
+  pawsey: ''
+  bunya: ''
+- name: amber
+  description: >-
+    The Assisted Model Building with Energy Refinement tool refers to two
+    things: a set of molecular mechanical force fields for the simulation of
+    biomolecules (which are in the public domain, and are used in a variety of
+    simulation programs); and a package of molecular simulation programs which
+    includes source code and demos.
+  url: http://ambermd.org
+  homepage: amber
+  registry-link: https://bio.tools/amber
+  id: amber
+  topics: 
+    - Molecular modelling
+    - Computational biology
+  publications:
+    publication1:
+      title: The Amber biomolecular simulation programs
+      url: https://onlinelibrary.wiley.com/doi/10.1002/jcc.20290
+    publication2:
+      title: An overview of the Amber biomolecular simulation package
+      url: https://wires.onlinelibrary.wiley.com/doi/10.1002/wcms.1121
+  biocontainers: amber
+  license: ''
+  resources-documentation: ''
+  galaxy:
+    - Generate MD topologies for small molecules
+  nci-gadi:
+    - 19.19.12
+    - 20
+    - 20-tools21
+    - 22
+  nci-if89: ''
+  pawsey: ''
+  bunya: ''
 - description: Bioconda is a bioinformatics channel for the Conda package manager
   id: bioconda
   url: https://bioconda.github.io/

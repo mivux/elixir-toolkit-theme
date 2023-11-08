@@ -1,6 +1,7 @@
 ---
 title: All tools and resources
 datatable: true
+sidebar: false
 ---
 
 

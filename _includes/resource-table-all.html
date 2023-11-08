@@ -224,11 +224,13 @@ where_exp:"item","item.national_resources != nil" %}
         </tbody>
     </table>
 </div>
+
 <div class="table-responsive mt-4 mb-5">
     <table class="tooltable table display">
         <thead>
-            <tr class="text-nowrap">
-                <th>Tool or resource {%- if include.tag -%}
+            <tr>
+                <th>Tool Name
+                    {%- if include.tag -%}
                     <a data-bs-toggle="tooltip"
                         data-bs-original-title="This is a curated list which means that not all tools or resources that exist for this topic are listed here. This is mainly because we do not intend to be a registry. In most cases you will only find back the tools or resources that are mentioned in this page.">
                         <i class="fa-solid fa-info-circle"></i>
@@ -263,69 +265,106 @@ where_exp:"item","item.national_resources != nil" %}
                 {%- assign instances_tool = instances_tool | plus: instance_matches.size %}
                 {%- endunless %}
                 {%- endfor %}
+
                 {% if tool.url %}
                 <td><a href="{{tool.url}}">{{tool.name}}</a></td>
                 {%- else %}
                 <td>{{tool.name}}</td>
                 {%- endif %}
-                {% if tool.registry-link %}
+
                 <td>
-                    <a href="{{tool.registry-link}}" class="badge rounded-pill bg-warning">
-                        <img src="https://bio.tools/img/elixir_biotools_transparent.png" class="img-fluid">
-                    </a>
+                    {% if tool.registry-link != blank %}
+                    <div class="badge bg-dark text-center w-100 px-4">
+                        <a href="{{tool.registry-link}}">
+                            <img src="https://bio.tools/img/elixir_biotools_transparent.png">
+                        </a>
+                    </div>
+                    {%- endif %}
                 </td>
-                {%- else %}
-                <td></td>
-                {%- endif %}
-                {% if tool.topics %}
+
                 <td>
-                    {%- for section in tool.topics %}
-                    <span class="badge rounded-pill text-bg-light">{{section}}</span>
+                    {% if tool.topics %}
+                    {%- for topic in tool.topics %}
+                    <span class="badge rounded-pill text-bg-light">{{topic}}</span>
                     {%- endfor %}
+                    {%- endif %}
                 </td>
-                {%- else %}
-                <td></td>
-                {%- endif %}
-                <td>publications</td>
-                {% if tool.biocontainers %}
+
                 <td>
-                    <a href="{{tool.biocontainers}}">{{tool.name}}</a>
+                    {% if tool.publications %}
+                    {%- for publication in tool.publications %}
+                    {%- for publication-item in publication %}
+                    <div class="mb-2 text-nowrap">
+                        <a href="{{publication-item.url}}">{{publication-item.title}}</a>
+                    </div>
+                    {%- endfor %}
+                    {%- endfor %}
+                    {%- endif %}
                 </td>
-                {%- else %}
-                <td></td>
-                {%- endif %}
-                {%- assign attribute_name = tool.galaxy-australia | strip %}
-                {%- assign pattern = "([0-9]+ tools)" %}
-                {%- assign match = attribute_name | match: pattern %}
-                {%- if match.size > 0 %}
-                {%- assign tools_label = match %}
+
                 <td>
-                    <p>{{match.size}}</p>
-                    <button class="tool-button">{{ tools_label }}</button>
+                    {% if tool.biocontainers != blank %}
+                    <a href="https://biocontainers.pro/tools/{{tool.biocontainers}}">{{tool.name}}</a>
+                    {%- endif %}
                 </td>
-                {%- else %}
-                <td>{{tool.galaxy-australia}}</td>
-                {%- endif %}
-                {% if tool.nci-gadi %}
-                <td>{{tool.nci-gadi}}</td>
-                {%- else %}
-                <td></td>
-                {%- endif %}
-                {% if tool.nci-if89 %}
-                <td>{{tool.nci-if89}}</td>
-                {%- else %}
-                <td></td>
-                {%- endif %}
-                {% if tool.pawsey %}
-                <td>{{tool.pawsey}}</td>
-                {%- else %}
-                <td></td>
-                {%- endif %}
-                {% if tool.bunya %}
-                <td>{{tool.bunya}}</td>
-                {%- else %}
-                <td></td>
-                {%- endif %}
+
+                <td>
+                    {%- if tool.galaxy.size > 1 %}
+                    <!-- <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                    aria-controls="flush-collapseOne">
+                                    Accordion Item #1
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to
+                                    demonstrate the <code>.accordion-flush</code> class. This is the first item's
+                                    accordion body.</div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <p class="d-inline-flex gap-1">
+                        <a data-bs-toggle="collapse" href="#collapseExample" aria-expanded="false"
+                            aria-controls="collapseExample">
+                            {{ tool.galaxy.size }} tools &thinsp;<i class="fa-solid fa-square-plus"></i>
+                        </a>
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                        {%- for galaxy-tool in tool.galaxy %}
+                        <div class="mt-2"><a href="">{{galaxy-tool}}</a></div>
+                        {%- endfor %}
+                    </div>
+                    {%- else %}
+                    <a href="">{{tool.galaxy[0]}}</a>
+                    {%- endif %}
+                </td>
+
+                <td>
+                    {% if tool.nci-gadi != blank %}
+                    {%- for gadi in tool.nci-gadi %}
+                    <span class="badge rounded-pill text-bg-light">{{gadi}}</span>
+                    {%- endfor %}
+                    {%- endif %}
+                </td>
+                <td>
+                    {% if tool.nci-if89 %}
+                    <span class="badge rounded-pill text-bg-light">{{tool.nci-if89}}</span>
+                    {%- endif %}
+                </td>
+                <td>
+                    {% if tool.pawsey %}
+                    <span class="badge rounded-pill text-bg-light">{{tool.pawsey}}</span>
+                    {%- endif %}
+                </td>
+                <td>
+                    {% if tool.bunya %}
+                    <span class="badge rounded-pill text-bg-light">{{tool.bunya}}</span>
+                    {%- endif %}
+                </td>
             </tr>
             {%- endfor %}
         </tbody>

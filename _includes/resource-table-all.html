@@ -10,7 +10,7 @@ where_exp:"item","item.national_resources != nil" %}
 {%- if include.tag %}
 <h2>Relevant tools and resources</h2>
 {%- endif %}
-<a class="visually-hidden-focusable" href='#skip-tool-table'>Skip tool table</a>
+<!-- <a class="visually-hidden-focusable" href='#skip-tool-table'>Skip tool table</a>
 <div class="table-responsive mt-4 mb-5">
     <table class="tooltable table display">
         <thead>
@@ -223,7 +223,7 @@ where_exp:"item","item.national_resources != nil" %}
             {%- endfor %}
         </tbody>
     </table>
-</div>
+</div> -->
 
 <div class="table-responsive mt-4 mb-5">
     <table class="tooltable table display">
@@ -266,26 +266,28 @@ where_exp:"item","item.national_resources != nil" %}
                 {%- endunless %}
                 {%- endfor %}
 
-                {% if tool.url %}
-                <td><a href="{{tool.url}}">{{tool.name}}</a></td>
-                {%- else %}
-                <td>{{tool.name}}</td>
-                {%- endif %}
+                <td>
+                    <div class="text-nowrap">
+                        {% if tool.url %}
+                        <a href="{{tool.url}}">{{tool.name}}</a>
+                        {%- else %}
+                        {{tool.name}}
+                        {%- endif %}
+                    </div>
+                </td>
 
                 <td>
                     {% if tool.registry-link != blank %}
-                    <div class="badge bg-dark text-center w-100 px-4">
-                        <a href="{{tool.registry-link}}">
-                            <img src="https://bio.tools/img/elixir_biotools_transparent.png">
-                        </a>
-                    </div>
+                    <a href="{{tool.registry-link}}" class="badge bg-dark text-center w-100 px-4">
+                        <img src="https://bio.tools/img/elixir_biotools_transparent.png">
+                    </a>
                     {%- endif %}
                 </td>
 
                 <td>
                     {% if tool.topics %}
                     {%- for topic in tool.topics %}
-                    <span class="badge rounded-pill text-bg-light">{{topic}}</span>
+                    <span class="badge text-bg-light text-wrap text-start">{{topic}}</span>
                     {%- endfor %}
                     {%- endif %}
                 </td>
@@ -295,7 +297,7 @@ where_exp:"item","item.national_resources != nil" %}
                     {%- for publication in tool.publications %}
                     {%- for publication-item in publication %}
                     <div class="mb-2 text-nowrap">
-                        <a href="{{publication-item.url}}">{{publication-item.title}}</a>
+                        <a href="{{publication-item.url}}">{{publication-item.title | truncate: 60}}</a>
                     </div>
                     {%- endfor %}
                     {%- endfor %}
@@ -335,34 +337,36 @@ where_exp:"item","item.national_resources != nil" %}
                     </p>
                     <div class="collapse" id="collapseExample">
                         {%- for galaxy-tool in tool.galaxy %}
-                        <div class="mt-2"><a href="">{{galaxy-tool}}</a></div>
+                        {%- for tool-item in galaxy-tool %}
+                        <div class="mt-2"><a href="{{tool-item.url}}">{{tool-item.title}}</a></div>
+                        {%- endfor %}
                         {%- endfor %}
                     </div>
                     {%- else %}
-                    <a href="">{{tool.galaxy[0]}}</a>
+                    <a href="{{tool.galaxy.tool-1.url}}">{{tool.galaxy.tool-1.title}}</a>
                     {%- endif %}
                 </td>
 
                 <td>
                     {% if tool.nci-gadi != blank %}
                     {%- for gadi in tool.nci-gadi %}
-                    <span class="badge rounded-pill text-bg-light">{{gadi}}</span>
+                    <span class="badge text-bg-light">{{gadi}}</span>
                     {%- endfor %}
                     {%- endif %}
                 </td>
                 <td>
                     {% if tool.nci-if89 %}
-                    <span class="badge rounded-pill text-bg-light">{{tool.nci-if89}}</span>
+                    <span class="badge text-bg-light">{{tool.nci-if89}}</span>
                     {%- endif %}
                 </td>
                 <td>
                     {% if tool.pawsey %}
-                    <span class="badge rounded-pill text-bg-light">{{tool.pawsey}}</span>
+                    <span class="badge text-bg-light">{{tool.pawsey}}</span>
                     {%- endif %}
                 </td>
                 <td>
                     {% if tool.bunya %}
-                    <span class="badge rounded-pill text-bg-light">{{tool.bunya}}</span>
+                    <span class="badge text-bg-light">{{tool.bunya}}</span>
                     {%- endif %}
                 </td>
             </tr>

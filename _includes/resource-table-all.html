@@ -287,7 +287,7 @@ where_exp:"item","item.national_resources != nil" %}
                 <td>
                     {% if tool.topics %}
                     {%- for topic in tool.topics %}
-                    <span class="badge text-bg-light text-wrap text-start">{{topic}}</span>
+                    <span class="badge text-bg-light mb-2 text-wrap text-start">{{topic}}</span>
                     {%- endfor %}
                     {%- endif %}
                 </td>
@@ -350,23 +350,23 @@ where_exp:"item","item.national_resources != nil" %}
                 <td>
                     {% if tool.nci-gadi != blank %}
                     {%- for gadi in tool.nci-gadi %}
-                    <span class="badge text-bg-light">{{gadi}}</span>
+                    <span class="badge text-bg-light mb-2">{{gadi}}</span>
                     {%- endfor %}
                     {%- endif %}
                 </td>
                 <td>
                     {% if tool.nci-if89 %}
-                    <span class="badge text-bg-light">{{tool.nci-if89}}</span>
+                    <span class="badge text-bg-light mb-2">{{tool.nci-if89}}</span>
                     {%- endif %}
                 </td>
                 <td>
                     {% if tool.pawsey %}
-                    <span class="badge text-bg-light">{{tool.pawsey}}</span>
+                    <span class="badge text-bg-light mb-2">{{tool.pawsey}}</span>
                     {%- endif %}
                 </td>
                 <td>
                     {% if tool.bunya %}
-                    <span class="badge text-bg-light">{{tool.bunya}}</span>
+                    <span class="badge text-bg-light mb-2">{{tool.bunya}}</span>
                     {%- endif %}
                 </td>
             </tr>

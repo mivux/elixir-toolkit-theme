@@ -11,15 +11,12 @@
   biocontainers: ABRicate
   license: GPL-2.0
   resources-documentation: ''
-  galaxy: 
-    tool-1:
-      title: ABRicate List - 1.0.1
+  galaxy:
+    - title: ABRicate List - 1.0.1
       url: https://usegalaxy.org.au/root?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fabricate%2Fabricate_list%2F1.0.1
-    tool-2:
-      title: ABRicate - 1.0.1
+    - title: ABRicate - 1.0.1
       url: https://usegalaxy.org.au/root?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fabricate%2Fabricate%2F1.0.1
-    tool-3:
-      title: ABRicate Summary - 1.0.1
+    - title: ABRicate Summary - 1.0.1
       url: https://usegalaxy.org.au/root?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fabricate%2Fabricate_summary%2F1.0.1
   nci-gadi: ''
   nci-if89: ''
@@ -33,18 +30,15 @@
   id: abyss
   topics: Sequence assembly
   publications:
-    publication-1:
-      title: 'ABySS: A parallel assembler for short read sequence data'
+    - title: 'ABySS: A parallel assembler for short read sequence data'
       url: https://doi.org/10.1101/gr.089532.108
-    publication-2:
-      title: 'ABySS 2.0: Resource-efficient assembly of large genomes using a Bloom filter'
+    - title: 'ABySS 2.0: Resource-efficient assembly of large genomes using a Bloom filter'
       url: https://genome.cshlp.org/content/27/5/768
   biocontainers: abyss
   license: ''
   resources-documentation: ''
   galaxy:
-    tool-1:
-      title: ABySS - 2.3.6+galaxy1
+    - title: ABySS - 2.3.6+galaxy1
       url: https://usegalaxy.org.au/root?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fabyss%2Fabyss-pe%2F2.3.6%2Bgalaxy1
   nci-gadi: 
     - 2.2.3
@@ -62,8 +56,7 @@
   license: ''
   resources-documentation: ''
   galaxy:
-    tool-1:
-      title: Aggregate datapoints - 1.1.4
+    - title: Aggregate datapoints - 1.1.4
       url: https://usegalaxy.org.au/root?tool_id=aggregate_scores_in_intervals2
   nci-gadi: ''
   nci-if89: ''
@@ -84,18 +77,15 @@
     - Molecular modelling
     - Computational biology
   publications:
-    publication-1:
-      title: The Amber biomolecular simulation programs
+    - title: The Amber biomolecular simulation programs
       url: https://onlinelibrary.wiley.com/doi/10.1002/jcc.20290
-    publication-2:
-      title: An overview of the Amber biomolecular simulation package
+    - title: An overview of the Amber biomolecular simulation package
       url: https://wires.onlinelibrary.wiley.com/doi/10.1002/wcms.1121
   biocontainers: amber
   license: ''
   resources-documentation: ''
   galaxy:
-    tool-1:
-      title: Generate MD topologies for small molecules - 21.10+galaxy0
+    - title: Generate MD topologies for small molecules - 21.10+galaxy0
       url: https://usegalaxy.org.au/root?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fchemteam%2Fambertools_acpype%2Fambertools_acpype%2F21.10%2Bgalaxy0
   nci-gadi:
     - 19.19.12
@@ -120,8 +110,7 @@
     - DNA
     - Gene expression
   publications:
-    publication-1:
-      title: Statistical, computational and visualization methodologies to unveil gene primary structure features
+    - title: Statistical, computational and visualization methodologies to unveil gene primary structure features
       url: https://pubmed.ncbi.nlm.nih.gov/16538282/
   biocontainers: anaconda
   license: ''
@@ -141,15 +130,12 @@
   biocontainers: ''
   license: ''
   resources-documentation: ''
-  galaxy: 
-    tool-1:
-      title: Manipulate AnnData - 0.7.5+galaxy1
+  galaxy:
+    - title: Manipulate AnnData - 0.7.5+galaxy1
       url: https://usegalaxy.org.au/root?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fanndata_manipulate%2Fanndata_manipulate%2F0.7.5%2Bgalaxy1
-    tool-2:
-      title: Inspect AnnData - 0.7.5+galaxy1
+    - title: Inspect AnnData - 0.7.5+galaxy1
       url: https://usegalaxy.org.au/root?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fanndata_inspect%2Fanndata_inspect%2F0.7.5%2Bgalaxy1
-    tool-3:
-      title: Import Anndata and loom - 0.7.5+galaxy1
+    - title: Import Anndata and loom - 0.7.5+galaxy1
       url: https://usegalaxy.org.au/root?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fanndata_import%2Fanndata_import%2F0.7.5%2Bgalaxy1
   nci-gadi: ''
   nci-if89: ''
@@ -166,14 +152,16 @@
     found here.
   url: https://usegalaxy.org.au/root?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fannotatemyids%2Fannotatemyids%2F3.12.0%2Bgalaxy1
   homepage: annotatemyids
-  registry-link: ''
+  registry-link: https://bio.tools/annotatemyids
   id: annotatemyids
   topics: ''
   publications: ''
   biocontainers: annotatemyids
   license: MIT
   resources-documentation: ''
-  galaxy: annotateMyIDs
+  galaxy:
+    - title: annotateMyIDs - 3.17.0+galaxy1
+      url: https://usegalaxy.org.au/root?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fannotatemyids%2Fannotatemyids%2F3.17.0%2Bgalaxy1
   nci-gadi: ''
   nci-if89: ''
   pawsey: ''
@@ -186,24 +174,30 @@
     metabolite analysis tools that have been published earlier.
   url: https://antismash.secondarymetabolites.org/#!/start
   homepage: antiSMASH
-  registry-link: ''
+  registry-link: https://bio.tools/antismash
   id: antismash
   topics: 
     - Molecular interactions, pathways and networks
     - Gene and protein families
-  publications: >-
-    AntiSMASH: Rapid identification, annotation and analysis of secondary
-    metabolite biosynthesis gene clusters in bacterial and fungal genome
-    sequencesantiSMASH 2.0--a versatile platform for genome mining of secondary
-    metabolite producers.AntiSMASH 3.0-A comprehensive resource for the genome
-    mining of biosynthetic gene clustersAntiSMASH 4.0 - improvements in
-    chemistry prediction and gene cluster boundary identificationThe antiSMASH
-    database version 3: Increased taxonomic coverage and new query features for
-    modular enzymes
+  publications: 
+    - title: 'AntiSMASH: Rapid identification, annotation and analysis of secondary
+      metabolite biosynthesis gene clusters in bacterial and fungal genome
+      sequences'
+      url: https://academic.oup.com/nar/article/39/suppl_2/W339/2507123?login=false
+    - title: antiSMASH 2.0--a versatile platform for genome mining of secondary metabolite producers.
+      url: https://academic.oup.com/nar/article/41/W1/W204/1106076
+    - title: AntiSMASH 3.0-A comprehensive resource for the genome mining of biosynthetic gene clusters
+      url: https://academic.oup.com/nar/article/43/W1/W237/2467910?login=false
+    - title: AntiSMASH 4.0 - improvements in chemistry prediction and gene cluster boundary identification
+      url: https://academic.oup.com/nar/article/45/W1/W36/3778252?login=false
+    - title: 'The antiSMASH database version 3: Increased taxonomic coverage and new query features for modular enzymes'
+      url: https://academic.oup.com/nar/article/49/D1/D639/5957162?login=false
   biocontainers: antismash
   license: ''
   resources-documentation: ''
-  galaxy: Antismash
+  galaxy:
+  - title: Antismash - 6.1.1+galaxy1
+    url: https://usegalaxy.org.au/root?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Fantismash%2Fantismash%2F6.1.1%2Bgalaxy1
   nci-gadi: ''
   nci-if89: ''
   pawsey: ''

@@ -10,6 +10,7 @@ where_exp:"item","item.national_resources != nil" %}
 {%- if include.tag %}
 <h2>Relevant tools and resources</h2>
 {%- endif %}
+
 <!-- <a class="visually-hidden-focusable" href='#skip-tool-table'>Skip tool table</a>
 <div class="table-responsive mt-4 mb-5">
     <table class="tooltable table display">
@@ -278,7 +279,7 @@ where_exp:"item","item.national_resources != nil" %}
 
                 <td>
                     {% if tool.registry-link != blank %}
-                    <a href="{{tool.registry-link}}" class="badge bg-dark text-center w-100 px-4">
+                    <a href="{{tool.registry-link}}" class="badge bg-dark text-center px-4 biotools-button">
                         <img src="https://bio.tools/img/elixir_biotools_transparent.png">
                     </a>
                     {%- endif %}
@@ -295,11 +296,9 @@ where_exp:"item","item.national_resources != nil" %}
                 <td>
                     {% if tool.publications %}
                     {%- for publication in tool.publications %}
-                    {%- for publication-item in publication %}
                     <div class="mb-2 text-nowrap">
-                        <a href="{{publication-item.url}}">{{publication-item.title | truncate: 60}}</a>
+                        <a href="{{publication.url}}">{{publication.title | truncate: 60}}</a>
                     </div>
-                    {%- endfor %}
                     {%- endfor %}
                     {%- endif %}
                 </td>
@@ -337,13 +336,11 @@ where_exp:"item","item.national_resources != nil" %}
                     </p>
                     <div class="collapse" id="collapseExample">
                         {%- for galaxy-tool in tool.galaxy %}
-                        {%- for tool-item in galaxy-tool %}
-                        <div class="mt-2"><a href="{{tool-item.url}}">{{tool-item.title}}</a></div>
-                        {%- endfor %}
+                        <div class="mt-2"><a href="{{galaxy-tool.url}}">{{galaxy-tool.title}}</a></div>
                         {%- endfor %}
                     </div>
                     {%- else %}
-                    <a href="{{tool.galaxy.tool-1.url}}">{{tool.galaxy.tool-1.title}}</a>
+                    <a href="{{tool.galaxy[0].url}}">{{tool.galaxy[0].title}}</a>
                     {%- endif %}
                 </td>
 
@@ -382,12 +379,3 @@ where_exp:"item","item.national_resources != nil" %}
 {%- endunless %}
 <div id="skip-tool-table"></div>
 {%- endunless %}
-
-<script>
-    // JavaScript code to handle the onclick event
-    document.querySelectorAll('.tool-button').forEach(function (button) {
-        button.addEventListener('click', function () {
-            alert('You clicked the button for ' + this.textContent.trim() + '.');
-        });
-    });
-</script>

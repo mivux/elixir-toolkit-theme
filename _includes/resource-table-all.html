@@ -250,6 +250,7 @@ where_exp:"item","item.national_resources != nil" %}
         </thead>
         <tbody>
             {%- for tool in tools %}
+            {% assign rowId = "row" | append: forloop.index %}
             <tr>
                 {%- assign instances_tool = 0 %}
                 {%- assign total_county_tools = 0 %}
@@ -329,12 +330,12 @@ where_exp:"item","item.national_resources != nil" %}
                         </div>
                     </div> -->
                     <p class="d-inline-flex gap-1">
-                        <a data-bs-toggle="collapse" href="#collapseExample" aria-expanded="false"
-                            aria-controls="collapseExample">
+                        <a data-bs-toggle="collapse" href="#{{ rowId }}" aria-expanded="false"
+                            aria-controls="{{ rowId }}">
                             {{ tool.galaxy.size }} tools &thinsp;<i class="fa-solid fa-square-plus"></i>
                         </a>
                     </p>
-                    <div class="collapse" id="collapseExample">
+                    <div class="collapse" id="{{ rowId }}">
                         {%- for galaxy-tool in tool.galaxy %}
                         <div class="mt-2"><a href="{{galaxy-tool.url}}">{{galaxy-tool.title}}</a></div>
                         {%- endfor %}
